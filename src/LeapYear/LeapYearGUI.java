@@ -35,7 +35,7 @@ public class LeapYearGUI extends JFrame{
             }
         });
     }
-public void Checker(){
+    public void Checker(){
             try {
                 int year = Integer.parseInt(tfYear.getText());
                 boolean isLeapYear = false;
