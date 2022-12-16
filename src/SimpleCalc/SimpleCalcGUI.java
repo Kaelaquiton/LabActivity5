@@ -13,11 +13,5 @@ public class SimpleCalcGUI extends JFrame{
     private JLabel lblResult;
 
 
-    public SimpleCalcGUI(String title){
-        super(title);
-    }
 
-    public static void main(String[] args){
-
-    }
 }
