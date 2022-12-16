@@ -9,10 +9,33 @@ public class LeapYearGUI extends JFrame{
     private JButton btnCheckYear;
 
     public LeapYearGUI(){
-      this.setContentPane(panel1);
+        btnCheckYear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Checker();
+            }
+        });
 
-    btnCheckYear.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
+        tfYear.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    Checker();
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+    }
+public void Checker(){
             try {
                 int year = Integer.parseInt(tfYear.getText());
                 boolean isLeapYear = false;
@@ -34,16 +57,14 @@ public class LeapYearGUI extends JFrame{
             }catch (Exception ex) {
                 JOptionPane.showMessageDialog(panel1, ex.toString());
             }
-        }
-    });
-
 }
 
     public static void main(String[] args){
-        JFrame app = new LeapYearGUI();
+        LeapYearGUI app = new LeapYearGUI();
         app.setTitle("Leap Year Checker");
-        app.setVisible(true);
+        app.setContentPane(app.panel1);
         app.setSize(500,300);
+        app.setVisible(true);
         app.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }
