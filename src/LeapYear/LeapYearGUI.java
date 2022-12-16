@@ -10,6 +10,7 @@ public class LeapYearGUI extends JFrame{
 
     public LeapYearGUI(String title){
     super(title);
+    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     btnCheckYear.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
