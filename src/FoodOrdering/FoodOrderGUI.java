@@ -25,6 +25,12 @@ public class FoodOrderGUI extends JFrame{
             Order();
         }
     });
+
+        ButtonGroup btnG = new ButtonGroup();
+        btnG.add(rbNone);
+        btnG.add(rb5);
+        btnG.add(rb10);
+        btnG.add(rb15);
     }
 
     public void Order(){
