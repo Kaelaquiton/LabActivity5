@@ -8,9 +8,8 @@ public class LeapYearGUI extends JFrame{
     private JTextField tfYear;
     private JButton btnCheckYear;
 
-    public LeapYearGUI(String title){
-    super(title);
-    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    public LeapYearGUI(){
+      this.setContentPane(panel1);
 
     btnCheckYear.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
@@ -41,9 +40,10 @@ public class LeapYearGUI extends JFrame{
 }
 
     public static void main(String[] args){
-        JFrame app = new LeapYearGUI("Leap Year Checker");
+        JFrame app = new LeapYearGUI();
+        app.setTitle("Leap Year Checker");
         app.setVisible(true);
-        app.setSize(250,350);
-        app.setContentPane(((LeapYearGUI) app).panel1);
+        app.setSize(500,300);
+        app.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }
