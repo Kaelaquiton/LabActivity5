@@ -1,6 +1,8 @@
 package FoodOrdering;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FoodOrderGUI extends JFrame{
     private JPanel panel1;
@@ -17,7 +19,46 @@ public class FoodOrderGUI extends JFrame{
     private JRadioButton rb15;
 
     public FoodOrderGUI(){
+    btnOrder.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Order();
+        }
+    });
+    }
 
+    public void Order(){
+        double result = 0;
+        double discount;
+        if(cPizza.isSelected()){
+            result+=100;
+        }
+        if(cBurger.isSelected()){
+            result+=80;
+        }
+        if(cFries.isSelected()){
+            result+=65;
+        }
+        if(cSoftDrinks.isSelected()){
+            result+=55;
+        }
+        if(cTea.isSelected()){
+            result+=50;
+        }
+        if(cSundae.isSelected()){
+            result+=40;
+        }
+        if(rb5.isSelected()){
+            discount = (result*0.05);
+            result-=discount;
+        }else if(rb10.isSelected()){
+            discount =  (result*0.10);
+            result-=discount;
+        }else if(rb15.isSelected()){
+            discount =  result*0.15;
+            result-=discount;
+        }
+        JOptionPane.showMessageDialog(panel1, String.format("The total price is Php %.2f ", result));
     }
 
     public static void main(String[] args) {
