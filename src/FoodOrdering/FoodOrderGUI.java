@@ -76,7 +76,7 @@ public class FoodOrderGUI extends JFrame{
                 ifTrue2 = true;
             }
             if(ifTrue == false && ifTrue2 == false){
-                JOptionPane.showMessageDialog(panel1, String.format("Please select order"));
+                JOptionPane.showMessageDialog(panel1, String.format("Please select an order"));
             }else{
                 JOptionPane.showMessageDialog(panel1, String.format("The total price is Php %.2f ", result));
             }
