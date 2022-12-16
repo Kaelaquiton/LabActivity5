@@ -7,7 +7,6 @@ public class LeapYearGUI extends JFrame{
     private JPanel panel1;
     private JTextField tfYear;
     private JButton btnCheckYear;
-    private JLabel yearLabel;
 
     public LeapYearGUI(String title){
     super(title);
@@ -43,7 +42,7 @@ public class LeapYearGUI extends JFrame{
     public static void main(String[] args){
         JFrame frame = new LeapYearGUI("Leap Year Checker");
         frame.setVisible(true);
-        frame.setSize(300,400);
+        frame.setSize(250,350);
         frame.setContentPane(((LeapYearGUI) frame).panel1);
     }
 }
