@@ -46,7 +46,7 @@ public class SimpleCalcGUI extends JFrame{
     }
 
     public void Calc(){
-
+        try{
             int num1 = Integer.parseInt(tfNumber1.getText());
             int num2 = Integer.parseInt(tfNumber2.getText());
             int result = 0;
@@ -65,6 +65,9 @@ public class SimpleCalcGUI extends JFrame{
                     break;
             }
             lblResult.setText(String.valueOf(result));
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(panel1,ex.toString());
+        }
     }
 
     public static void main(String[] args) {
