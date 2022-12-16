@@ -29,37 +29,52 @@ public class FoodOrderGUI extends JFrame{
 
     public void Order(){
         try {
+            boolean ifTrue = false;
             double result = 0;
             double discount;
             if (cPizza.isSelected()) {
                 result += 100;
+                ifTrue = true;
             }
             if (cBurger.isSelected()) {
                 result += 80;
+                ifTrue = true;
             }
             if (cFries.isSelected()) {
                 result += 65;
+                ifTrue = true;
             }
             if (cSoftDrinks.isSelected()) {
                 result += 55;
+                ifTrue = true;
             }
             if (cTea.isSelected()) {
                 result += 50;
+                ifTrue = true;
             }
             if (cSundae.isSelected()) {
                 result += 40;
+                ifTrue = true;
             }
+            boolean ifTrue2 = false;
             if (rb5.isSelected()) {
                 discount = (result * 0.05);
                 result -= discount;
+                ifTrue2 = true;
             } else if (rb10.isSelected()) {
                 discount = (result * 0.10);
                 result -= discount;
+                ifTrue2 = true;
             } else if (rb15.isSelected()) {
                 discount = result * 0.15;
                 result -= discount;
+                ifTrue2 = true;
             }
-            JOptionPane.showMessageDialog(panel1, String.format("The total price is Php %.2f ", result));
+            if(ifTrue == false && ifTrue2 == false){
+                JOptionPane.showMessageDialog(panel1, String.format("Please select order"));
+            }else{
+                JOptionPane.showMessageDialog(panel1, String.format("The total price is Php %.2f ", result));
+            }
         }catch (Exception ex){
             JOptionPane.showMessageDialog(panel1,ex.toString());
         }
